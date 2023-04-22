@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>State Clues - Search Results</title>
+</head>
+<body>
+	<h1>State Clues - Search Results</h1>
+	{% if matches.empty %}
+		<p>No matches found.</p>
+	{% else %}
+		<table>
+			<tr>
+				<th>State</th>
+				<th>Clue</th>
+			</tr>
+			{% for _, row in matches.iterrows() %}
+				<tr>
+					<td>{{ row['state'] }}</td>
+					<td>{{ row['clue'] }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% endif %}
+</body>
+</html>
